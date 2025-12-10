@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Estudiantil - Segundo Semestre 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary: #1f4f8f;
+            --primary-light: #2f6dc0;
+            --bg: #f5f7fb;
+            --text: #222;
+            --card-bg: #ffffff;
+            --accent: #ffb347;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .top-bar {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title h1 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .logo-title span {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 0.75rem;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 999px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 1.5rem auto 2rem;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: #f9fafc;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e1e4ef;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            background: rgba(31,79,143,0.08);
+            color: var(--primary);
+            margin-right: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            padding: 1rem 0 2rem;
+        }
+
+        a.link {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a.link:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.1rem 0.5rem;
+            background: var(--accent);
+            color: #222;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            margin-left: 0.3rem;
+        }
+                .slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            margin-top: 0.5rem;
+            background: #000;
+             height: 250px;  /* altura fija para todas las imágenes */
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%; /* rellena la altura del slider */
+            flex-shrink: 0;
+            display: block;
+            object-fit: contain;  /* NO recorta ni deforma, solo ajusta */
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            padding: 0.35rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.55);
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .slider-prev {
+            left: 0.5rem;
+        }
+
+        .slider-next {
+            right: 0.5rem;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        @media (max-width: 700px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            nav a {
+                margin: 0.2rem 0.3rem 0.2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="logo-title">
+            <h1>Portafolio Estudiantil</h1>
+            <span>Segundo Semestre 2025 · Dra. Y. Castillo</span>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#actividades">Actividades</a>
+            <a href="#materiales">Materiales</a>
+            <a href="#evidencias">Evidencias</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#acerca">Acerca del sitio</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- 1. INICIO -->
+    <section id="inicio">
+    <h2>Inicio</h2>
+    <p class="subtitle">
+        Breve introducción del curso y propósito del compendio.
+    </p>
+
+    <p>
+        Este portafolio reúne todo lo que realizamos durante el semestre en el curso de Redes Informáticas. 
+        Aquí mostramos las actividades, prácticas, materiales y proyectos que trabajamos como parte del laboratorio.
+    </p>
+
+    <p>
+        El propósito de este compendio es dejar una evidencia clara y organizada de nuestro aprendizaje: desde las primeras 
+        prácticas hasta los proyectos finales. También sirve como una forma de ver nuestro avance en los temas de redes y cómo 
+        aplicamos lo aprendido en situaciones reales o simuladas.
+    </p>
+
+    <p>
+        Este trabajo fue elaborado por el grupo de laboratorio conformado por: 
+        Jason Arenales, Ian Thompson, Julio Fuentes y Ricardo Sanjur, bajo la guía de la 
+        Dra. Y. Castillo, en la carrera de Ingeniería en Sistemas y Computación de la 
+        Universidad Tecnológica de Panamá.
+    </p>
+    </section>
+
+    <!-- 2. ACTIVIDADES -->
+<section id="actividades">
+    <h2>Actividades del semestre</h2>
+    <p class="subtitle">Actividades organizadas por tipo de trabajo desarrollado durante el semestre.</p>
+
+    <h3>LABORATORIOS (20%)</h3>
+
+    <article class="card">
+        <h4>Laboratorio 1 – Investigación sobre problemas de comunicación en redes</h4>
+        <p><strong>Fecha de entrega:</strong> 28/08/2025</p>
+        <p>Investigación grupal sobre problemas de red como interferencia, latencia, atenuación, ruido, jitter, pérdida de paquetes, throughput y errores de enlace. Incluyó definición, causas, soluciones, ejemplos y referencias.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQAwL1JgiylSQpn3K7kMlUAXAcotV65cOIvi-ePecAmetEw?e=hqqnfk" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>Laboratorio 2 – Armado de cables de red</h4>
+        <p><strong>Fecha de entrega:</strong> 05/09/2025</p>
+        <p>Informe sobre el proceso de armado de cables de red, herramientas y tipos de cableado.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQD-Wn9zznASSIaNgqi4KTe2AT5wfTgxa5-8mE7iCkodEi8?e=qjncQF" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>Laboratorio 3 – Equipos de interconexión</h4>
+        <p><strong>Fecha de entrega:</strong> 08/09/2025</p>
+        <p>Selección y análisis de un equipo de interconexión. Incluyó definición, uso, características, imágenes y conectividad.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQA-mYgXCTYbRbqrYMJ5_QZxARKk2N7l-7wXAj3DwFW_8B8?e=JCTzBH" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>Laboratorio 4 – Visita al cuarto de comunicaciones</h4>
+        <p><strong>Fecha de entrega:</strong> 16/09/2025</p>
+        <p>Informe sintetizado sobre la visita al cuarto de comunicaciones del CR Chiriquí.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQBWC8OIN60AR4IEgIvBIS4TARixxPf7B57BVuRY7w7jiYU?e=9MBq0V" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+    
+    <article class="card">
+        <h4>Laboratorio 5 – ISP y analizador Wireshark</h4>
+        <p><strong>Fecha de entrega:</strong> 25/09/2025</p>
+        <p>Análisis de tráfico de red con Wireshark y estudio del funcionamiento de los ISP.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQB10JOyabF8Rq2hJggWB0HkAe1xEdEXoxy4pepfEXAGRo8?e=RVAM3b" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>LAB 6 – Software de monitoreo de red</h4>
+        <p><strong>Fecha de entrega:</strong> 28/10/2025</p>
+        <p>Selección de un software de monitoreo de red, con análisis de funciones, ventajas, limitaciones y esquema de trabajo.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQCNIRbORFEkTbOXi130a7ILARIeLACswq59grZabkOzv-E?e=Seftib" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>Lab 6 – Red simple</h4>
+        <p><strong>Fecha de entrega:</strong> 08/10/2025</p>
+        <p>Construcción y simulación de una red simple en Packet Tracer.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQA7mTlAganUQI_mlYluFFSPAavhAgg96cTNXIHQZ-uAuZk?e=6yQeI5" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>Laboratorio 5 – Creación de VPN</h4>
+        <p><strong>Fecha de entrega:</strong> 28/10/2025</p>
+        <p>Creación de una red doméstica con tres redes virtuales: Invitado, Virtual1 y Virtual2 (IoT). Se entregó diagrama y documentación.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQC_nrAXbJcnQZ5P7b4o8nSBAVj_V8XEHAvwuzG8VPnCTbM?e=Ya2jaq" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <article class="card">
+        <h4>LAB 6 – Creación de una red simple (final)</h4>
+        <p><strong>Fecha de entrega:</strong> 13/11/2025</p>
+        <p>Diseño final de una red simple con dispositivos seleccionados por el grupo.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQB3iWFwjL4pQa9lllg9o5eeARqlDb1RWKkLFqA5pd0AfOI?e=x645nx" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <h3>PARCIALES (30%)</h3>
+
+    <article class="card">
+    <h4>Parcial 1 – Evaluación teórica</h4>
+    <p><strong>Fecha:</strong> 25/09/2025</p>
+    <p>
+        Evaluación teórica realizada mediante formulario en línea sobre los contenidos trabajados
+        en clase.
+    </p>
+    <p>
+        <strong>Evidencia del parcial:</strong> 
+        <!-- Cuando tengas algo subido, cambias el # por el enlace -->
+        <a class="link" href="https://utpac-my.sharepoint.com/:i:/g/personal/jason_arenales_utp_ac_pa/IQAFY8vZ0Ps_QKX2iQNUnL6gAbkRdqpFCXxnMx0F8U5s5bg?e=koYv6Y" target="_blank">Ver evidencia (captura)</a>
+    </p>
+    </article>
+
+
+    <article class="card">
+        <h4>Parcial 2 – Curso Packet Tracer (NetAcad)</h4>
+        <p><strong>Fecha:</strong> 16/10/2025</p>
+        <p>Curso individual del Cisco NetAcad con examen final y evidencia de nota.</p>
+        <p><strong>Enlace al trabajo:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQBsdRykOeCBQ78E8Q9WA0FlAXpMK4upAXctDsKDufdwGi4?e=bgugVd" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+    <h3>PROYECTOS (15%)</h3>
+
+    <article class="card">
+        <h4>Proyecto Nº1 – Documento y presentación</h4>
+        <p><strong>Fecha:</strong> 14/10/2025</p>
+        <p>Entrega del documento y la presentación del proyecto designado al grupo.</p>
+        <p><strong>Enlace al proyecto:</strong> <a href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQD80-UBOc7HT61Ml9hFqwnTAaf--j-FHy0CDHNhYbqdE0k?e=nf3OOB" target="_blank">Agregar enlace de OneDrive aquí</a></p>
+    </article>
+
+</section>
+
+
+    <!-- 3. MATERIALES -->
+    <section id="materiales">
+        <h2>Materiales</h2>
+        <p class="subtitle">
+            Presentaciones, PDFs, enlaces externos, videos y otros recursos utilizados.
+        </p>
+
+        <div class="grid">
+            <article class="card">
+                <h3>Presentaciones del curso</h3>
+                <ul>
+                    <li><a class="link" href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQDqdfFraP39R5EhNjMosiJcAWeb08nzlXYvBx1bNrHk5ps?e=sgmiPq" target="_blank">Presentación – Throughput (Laboratorio 1 – Problemas de comunicación en redes)</a></li>
+                    <li><a class="link" href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQA-mYgXCTYbRbqrYMJ5_QZxARKk2N7l-7wXAj3DwFW_8B8?e=JCTzBH" target="_blank">Presentación  - GATEWAYS (Laboratorio 3)</a></li>
+                    <li><a class="link" href="https://utpac-my.sharepoint.com/:b:/g/personal/jason_arenales_utp_ac_pa/IQCNIRbORFEkTbOXi130a7ILARIeLACswq59grZabkOzv-E?e=Seftib" target="_blank">Presentación – Software de Monitoreo de Red (Laboratorio 6)</a></li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>Guías y PDFs</h3>
+                <ul>
+                    <li>
+                        Módulo 1 – Infraestructura de red (PDF) <br>
+                        <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQA2W8ArqsUkQ4bK1n9b6r8dAQ9KCV72Qx7wNhaNjm7km_M?e=ugk1BY" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </li>
+                    <li>
+                        Módulo 1 – Cisco Packet Tracer (PDF) <br>
+                        <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQBFHFBQjP98Rrb-yC_Yfe0kAbumvhvt91FDtnLxsZNwuZ4?e=mQHukC" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </li>
+                    <li>
+                        Módulo 1 – Proveedores de cables RI (PDF) <br>
+                        <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQDFneeQRDpNRKjyv_BMBR9RAYn5BiUMctonGlvqBf2ickc?e=pU8Gll" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </li>
+                    <li>
+                        Módulo 1 – Redes informáticas (PDF) <br>
+                        <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQBYNp6M7vE5Solacepc_3M4AVnrA4x0Godc_ahyftbieeU?e=j1CsdO" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </li>
+                    <li>
+                    Módulo 2 – Direcciones IP (PDF) <br>
+                    <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQCKQK3WTqexQpaVh0IfiReiAVayvgRyKUdW1zUKobUOxyQ?e=h3bPbL" target="_blank">
+                        Abrir archivo
+                    </a>
+                </li>
+                <li>
+                    Módulo 2 – Protocolos y modelos de referencia (PDF) <br>
+                    <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQBpi0avA7ylR5xvO2GYAu2LAUbEJudomGzmxLH4BhhSdQ4?e=pbEdFY" target="_blank">
+                        Abrir archivo
+                    </a>
+                </li>
+                <li>
+                    Módulo 3 – VPN (PDF) <br>
+                    <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQBTcEGYUtySSbdAhajE4XCTARM1lP3KDJZ0diVVU1NV9bk?e=ZlxlWK" target="_blank">
+                        Abrir archivo
+                    </a>
+                </li>
+
+                <li>
+                    Módulo 3 – Segmentación de Red (PDF)  <br>
+                    <a class="link" href="https://utpac.sharepoint.com/:b:/s/REDESINFORMATICAS0761/IQC5w5PWS3jcSLL1sr89oNttASgQnGHHJoepjGneR_VIBE4?e=rkGtyC" target="_blank">
+                        Abrir archivo
+                    </a>
+                </li>
+
+                </ul>
+            </article>
+
+
+            <article class="card">
+                <h3>Enlaces y videos</h3>
+                <ul>
+                    <li><a class="link" href="https://www.solarwinds.com/network-performance-monitor" target="_blank">Plataforma / simulador utilizado</a></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- 4. EVIDENCIAS / GALERÍA -->
+    <section id="evidencias">
+    <h2>Evidencias / Galería</h2>
+    <p class="subtitle">
+        Evidencias visuales obtenidas a partir de los informes y documentos entregados durante el semestre.
+    </p>
+
+    <div class="grid">
+
+        <!-- Evidencia 1 -->
+        <article class="card">
+            <h3>Laboratorio 1 – Redes Informáticas</h3>
+            <p>Evidencias tomadas del archivo <strong>"Laboratorio 1 - Redes Informáticas.pdf"</strong>. Muestran el desarrollo del primer laboratorio del curso.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <!-- Capturas de páginas o diagramas de ese PDF -->
+                    <img src="img/lab1_redes_1.png" alt="Laboratorio 1 - Redes Informáticas - página 1">
+                    <img src="img/lab1.png" alt="Laboratorio 1 - Redes Informáticas - página 2">
+                    <img src="img/lab1_1.png" alt="Laboratorio 1 - Redes Informáticas - página 3">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+        <!-- Evidencia 2 -->
+        <article class="card">
+            <h3>Laboratorio 2 – Redes Informáticas</h3>
+            <p>Evidencias basadas en el archivo <strong>"Laboratorio 2 - Redes Informaticas.pdf"</strong>, relacionadas con el armado de cables y configuración básica.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <img src="img/lab2.png" alt="Laboratorio 2 - Redes Informáticas - página 1">
+                    <img src="img/lab2_2.png" alt="Laboratorio 2 - Redes Informáticas - página 2">
+                    <img src="img/lab2_2_2.png" alt="Laboratorio 2 - Redes Informáticas - página 3">
+                    <img src="img/lab2_2_2_2.png" alt="Laboratorio 2 - Redes Informáticas - página 4">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+        <!-- Evidencia -->
+        <article class="card">
+            <h3>Laboratorio 3 – Equipo de interconexión</h3>
+            <p>Capturas obtenidas del archivo <strong>"Laboratorio 3 - Equipo de interconexión.pdf"</strong>, Para cada equipo se debe colocar una definición, su uso, características, imágenes y formas de conectividad.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <img src="img/lab3.png" alt="Laboratorio 3 - Equipo de interconexión - página 1">
+                    <img src="img/lab3_3.png" alt="Laboratorio 3 - Equipo de interconexión - página 2">
+                     <img src="img/lab3_3_3.png" alt="Laboratorio 3 - Equipo de interconexión - página 2">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+        <!-- Evidencia 3 -->
+        <article class="card">
+            <h3>Laboratorio 4 – Redes Informáticas</h3>
+            <p>Capturas obtenidas del archivo <strong>"Laboratorio 4 - Redes Informaticas.pdf"</strong>, donde se documenta la visita al cuarto de comunicaciones.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <img src="img/lab4.png" alt="Laboratorio 4 - Redes Informáticas - página 1">
+                    <img src="img/lab4_4.png" alt="Laboratorio 4 - Redes Informáticas - página 2">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+        <!-- Evidencia 4 -->
+        <article class="card">
+            <h3>Laboratorio 5 – Redes Informáticas / Wireshark</h3>
+            <p>Evidencias tomadas de <strong>"Laboratorio 5 - Redes Informaticas.pdf"</strong> y de los documentos <strong>"LAB5_Wireshark*.pdf"</strong>, donde se analizó tráfico de red con Wireshark.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <img src="img/lab5.png" alt="Laboratorio 5 - Redes Informáticas - resumen">
+                    <img src="img/lab5_5.png" alt="Wireshark - captura de paquetes">
+                    <img src="img/lab5_5.png" alt="Wireshark - análisis de tráfico">
+                    <img src="img/lab5_5_5.png" alt="Wireshark - análisis de tráfico">
+                    <img src="img/lab5_5_5_5.png" alt="Wireshark - análisis de tráfico">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+        <!-- Evidencia 5 -->
+        <article class="card">
+            <h3>Laboratorio 6 – Creación de una Red Simple</h3>
+            <p>Imágenes basadas en los archivos <strong>"Laboratorio 6 - Creación de una Red Simple.pdf"</strong> y <strong>"Laboratorio 6_Red Simple.pdf"</strong>, donde se diseña y documenta una red básica.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <img src="img/lab6.png" alt="Laboratorio 6 - Red simple - diagrama">
+                    <img src="img/lab6_6.png" alt="Laboratorio 6 - Red simple - configuración">
+                    <img src="img/lab6_6_6.png" alt="Laboratorio 6 - Red simple - configuración">
+                    <img src="img/lab6_6_6_6.png" alt="Laboratorio 6 - Red simple - configuración">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+        <!-- Evidencia 6 -->
+        <article class="card">
+            <h3>Parcial Packet Tracer y Proyecto Final</h3>
+            <p>Evidencias provenientes de <strong>"Parcial PT_JasonArenales.pdf"</strong> y <strong>"Proyecto 1 - Redes Informáticas.pdf"</strong>, donde se muestran ejercicios de Packet Tracer y el desarrollo del proyecto final.</p>
+
+            <div class="slider" data-slider>
+                <div class="slider-track">
+                    <img src="img/parcialJason.png" alt="Parcial Packet Tracer - evidencia">
+                </div>
+                <button class="slider-btn slider-prev">&#8249;</button>
+                <button class="slider-btn slider-next">&#8250;</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+
+    <!-- 5. PROYECTOS DESTACADOS -->
+    <section id="proyectos">
+        <h2>Proyectos destacados</h2>
+        <p class="subtitle">
+            Trabajo final o proyectos importantes del semestre.
+        </p>
+
+        <article class="card">
+            <h3>Proyecto Final: [Nombre del proyecto] <span class="badge">Destacado</span></h3>
+            <p>
+                Breve descripción del proyecto: el problema que aborda, los objetivos principales y el enfoque utilizado
+                para resolverlo.
+            </p>
+            <ul>
+                <li><strong>Integrantes:</strong> [Nombres de los estudiantes]</li>
+                <li><strong>Rol de cada integrante:</strong> [Descripción breve]</li>
+                <li><strong>Resultados principales:</strong> [Resumen]</li>
+                <li><strong>Conclusiones:</strong> [Conclusión general del proyecto]</li>
+            </ul>
+            <p>
+                <!-- Enlace al reporte o demo -->
+                <a class="link" href="#" target="_blank">Ver reporte completo / demo del proyecto</a>
+            </p>
+        </article>
+    </section>
+
+    <!-- 6. CONTACTO / INFORMACIÓN DEL CURSO -->
+    <section id="contacto">
+    <h2>Contacto / Información del curso</h2>
+    <p class="subtitle">
+        Datos del grupo, docente y detalles generales del curso.
+    </p>
+
+    <div class="grid">
+        
+        <!-- Estudiantes -->
+        <article class="card">
+            <h3>Estudiantes del grupo</h3>
+            <ul>
+                <li>
+                    Jason Arenales – 
+                    <a class="link" href="mailto:jason.arenales@utp.ac.pa">Correo UTP</a>
+                </li>
+                <li>
+                    Ian Thompson – 
+                    <a class="link" href="mailto:ian.thompson@utp.ac.pa">Correo UTP</a>
+                </li>
+                <li>
+                    Julio Fuentes – 
+                    <a class="link" href="mailto:julio.fuentes1@utp.ac.pa">Correo UTP</a>
+                </li>
+                <li>
+                    Ricardo Sanjur – 
+                    <a class="link" href="mailto:ricardo.sanjur4@utp.ac.pa">Correo UTP</a>
+                </li>
+            </ul>
+        </article>
+
+        <!-- Información del curso -->
+        <article class="card">
+            <h3>Información del curso</h3>
+            <ul>
+                <li><strong>Docente:</strong> Yarisol Castillo</li>
+                <li><strong>Carrera:</strong> Licenciatura en Ingeniería de Sistemas y Computación</li>
+                <li><strong>Grupo de laboratorio:</strong> 2IL141</li>
+                <li><strong>Sede:</strong> UTP – Centro Regional de Chiriquí</li>
+                <li><strong>Institución:</strong> Universidad Tecnológica de Panamá</li>
+            </ul>
+        </article>
+
+    </div>
+</section>
+
+
+    <!-- 7. DOCUMENTACIÓN: ACERCA DEL SITIO, CRÉDITOS, TECNOLOGÍAS -->
+<section id="acerca">
+    <h2>Acerca del sitio</h2>
+    <p class="subtitle">
+        Documentación general del Portafolio Estudiantil – Segundo Semestre 2025.
+    </p>
+
+    <p>
+        Este portafolio estudiantil fue creado para recopilar, organizar y presentar todas las 
+        actividades desarrolladas durante el curso de Redes Informáticas, impartido por la 
+        Dra. Yarisol Castillo, en el Segundo Semestre 2025.
+    </p>
+
+    <p>
+        El propósito principal del sitio es ofrecer un compendio claro y accesible que refleje nuestro 
+        aprendizaje, las prácticas realizadas, los proyectos trabajados en grupo y el uso de herramientas 
+        digitales. Buscamos que este portafolio sea una representación transparente del esfuerzo del 
+        grupo Bocaracá y del progreso obtenido durante el semestre.
+    </p>
+
+    <p>
+        Además de su función evaluativa, este sitio también sirve como una muestra del trabajo colaborativo y 
+        de cómo aplicamos los contenidos vistos en clase a situaciones prácticas, simulaciones 
+        y ejercicios de laboratorio.
+    </p>
+
+    <h3>Créditos</h3>
+    <ul>
+        <li><strong>Elaboración del sitio web:</strong> Jason Arenales, Julio Fuentes, Ian Thompson, Ricardo Sanjur</li>
+        <li><strong>Docente responsable:</strong> Dra. Yarisol Castillo</li>
+        <li><strong>Curso:</strong> Redes Informáticas</li>
+        <li><strong>Grupo:</strong> 2IL144 – Laboratorio Bocaracá</li>
+        <li><strong>Institución:</strong> Universidad Tecnológica de Panamá, Centro Regional de Chiriquí</li>
+    </ul>
+
+    <h3>Tecnologías utilizadas</h3>
+    <ul>
+        <li><strong>HTML5</strong>: estructura y contenido del sitio.</li>
+        <li><strong>CSS3</strong>: diseño visual, estilos y maquetación.</li>
+        <li><strong>JavaScript</strong>: interactividad (como los sliders de imágenes).</li>
+        <li><strong>OneDrive</strong>: almacenamiento de materiales y documentos utilizados en el curso.</li>
+        <li><strong>VS Code</strong>: entorno de edición del proyecto.</li>
+        <li><strong>Navegador web</strong>: visualización y pruebas del portafolio.</li>
+        <li><strong>(Opcional) GitHub Pages</strong>: posible hosting para compartir el sitio.</li>
+    </ul>
+</section>
+
+
+</main>
+
+<footer>
+    Portafolio Estudiantil · Segundo Semestre 2025 · Grupo de laboratorio · Dra. Y. Castillo
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("[data-slider]").forEach(function (slider) {
+        const track = slider.querySelector(".slider-track");
+        const slides = Array.from(track.children);
+        if (slides.length === 0) return;
+
+        let index = 0;
+
+        function update() {
+            track.style.transform = "translateX(-" + (index * 100) + "%)";
+        }
+
+        const nextBtn = slider.querySelector(".slider-next");
+        const prevBtn = slider.querySelector(".slider-prev");
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", function () {
+                index = (index + 1) % slides.length;
+                update();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", function () {
+                index = (index - 1 + slides.length) % slides.length;
+                update();
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
